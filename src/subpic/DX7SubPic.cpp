@@ -22,6 +22,8 @@
 #include "stdafx.h"
 #include <ddraw.h>
 #include <d3d.h>
+
+#if(DIRECT3D_VERSION < 0x0800)
 #include "DX7SubPic.h"
 
 //
@@ -111,7 +113,7 @@ STDMETHODIMP CDX7SubPic::Lock(SubPicDesc& spd)
 	spd.h = m_size.cy;
 	spd.bpp = (WORD)ddsd.ddpfPixelFormat.dwRGBBitCount;
 	spd.pitch = ddsd.lPitch;
-	spd.bits = ddsd.lpSurface;
+	spd.bits = (BYTE*)ddsd.lpSurface;
 	spd.vidrect = m_vidrect;
 
 	return S_OK;
@@ -302,3 +304,4 @@ bool CDX7SubPicAllocator::Alloc(bool fStatic, ISubPic** ppSubPic)
 
 	return true;
 }
+#endif

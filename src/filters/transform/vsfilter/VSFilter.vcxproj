@@ -1,83 +1,54 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|Win32">
-      <Configuration>Debug</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release log|Win32">
-      <Configuration>Release log</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Win32">
-      <Configuration>Release</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release log|x64">
-      <Configuration>Release log</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|x64">
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>vsfilter</ProjectName>
+    <UseNativeEnvironment>true</UseNativeEnvironment>
+    <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{530890F8-CBCB-4DAB-BEDF-9FB667D0AFEE}</ProjectGuid>
-    <RootNamespace>$(ProjectName)</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>vsfilter</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <Import Project="..\..\..\configuration.props" />
-  <PropertyGroup Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
-    <UseOfMfc>Static</UseOfMfc>
-    <UseOfAtl>false</UseOfAtl>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
-    <UseDebugLibraries>true</UseDebugLibraries>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)'=='Release log'" Label="Configuration">
     <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release log|x64'">
-    <PlatformToolset>v140</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release log|Win32'">
-    <PlatformToolset>v140</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <PlatformToolset>v140</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <PlatformToolset>v140</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <PlatformToolset>v140</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Label="PropertySheets">
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\..\common.props" />
     <Import Project="VSFilter.props" />
   </ImportGroup>
-  <PropertyGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>VSFilter</TargetName>
   </PropertyGroup>
-  <ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
+    </ClCompile>
     <Link>
       <ModuleDefinitionFile>VSFilter.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
     </Link>
     <ResourceCompile>
       <PreprocessorDefinitions>_AFXDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -101,6 +72,7 @@
     <ClCompile Include="csriapi.cpp" />
     <ClCompile Include="DirectVobSub.cpp" />
     <ClCompile Include="DirectVobSubFilter.cpp" />
+    <ClCompile Include="DirectVobSubFilterDll.cpp" />
     <ClCompile Include="DirectVobSubPropPage.cpp" />
     <ClCompile Include="once_logger.cpp">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -110,13 +82,13 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="StyleEditorDialog.cpp" />
+    <ClCompile Include="SubRenderOptionsImpl.cpp" />
     <ClCompile Include="Systray.cpp" />
     <ClCompile Include="TextInputPin.cpp" />
     <ClCompile Include="vfr.cpp" />
     <ClCompile Include="VSFilter.cpp" />
-    <ClCompile Include="xy_logger.cpp">
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="XyOptionsImpl.cpp" />
+    <ClCompile Include="xy_logger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAutoTiming.h" />
@@ -130,18 +102,49 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="StdAfx.h" />
     <ClInclude Include="StyleEditorDialog.h" />
+    <ClInclude Include="SubRenderOptionsImpl.h" />
     <ClInclude Include="Systray.h" />
     <ClInclude Include="TextInputPin.h" />
     <ClInclude Include="Timing_Logger.h" />
     <ClInclude Include="version.h" />
     <ClInclude Include="vfr.h" />
     <ClInclude Include="VSFilter.h" />
+    <ClInclude Include="XyOptionsImpl.h" />
     <ClInclude Include="XySubRenderIntf.h" />
     <ClInclude Include="xy_logger.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\Icon_147.ico" />
     <None Include="VSFilter.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\dsutil\dsutil.vcxproj">
+      <Project>{fc70988b-1ae5-4381-866d-4f405e28ac42}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\subpic\subpic.vcxproj">
+      <Project>{d514ea4d-eafb-47a9-a437-a582ca571251}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\subtitles\libssf\libssf.vcxproj">
+      <Project>{dd9d2d92-2241-408a-859e-b85d444b7e3c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\subtitles\subtitles.vcxproj">
+      <Project>{5e56335f-0fb1-4eea-b240-d8dc5e0608e4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\thirdparty\log4cplus\msvc\log4cplus_static.vcxproj">
+      <Project>{bec0cd2f-60cd-40e2-a89b-ab10e902f1d5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\thirdparty\VirtualDub\Kasumi\Kasumi.vcxproj">
+      <Project>{0d252872-7542-4232-8d02-53f9182aee15}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\thirdparty\VirtualDub\system\system.vcxproj">
+      <Project>{c2082189-3ecb-4079-91fa-89d3c8a305c0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BaseClasses\BaseClasses.vcxproj">
+      <Project>{f558e2b6-62cf-4d1d-a6ea-448d159e5675}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\basevideofilter\basevideofilter.vcxproj">
+      <Project>{54dda60f-e528-4d07-a152-960a1e818680}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

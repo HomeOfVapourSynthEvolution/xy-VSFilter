@@ -18,6 +18,9 @@
     <ClCompile Include="CoordGeom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DX7SubPic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="DX9SubPic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -60,9 +63,21 @@
     <ClCompile Include="SimpleSubpicImpl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="XySubRenderFrameWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XySubRenderProviderWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="alpha_blender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CoordGeom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DX7SubPic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DX9SubPic.h">
@@ -117,6 +132,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SimpleSubpicImpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="XySubRenderFrameWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="XySubRenderProviderWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alpha_blender.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
