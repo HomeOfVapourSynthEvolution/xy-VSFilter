@@ -8,14 +8,12 @@
 class CDirectVobSubFilter;
 
 // Expose this interface if you do NOT want to work with XySubFilter in a graph
-[uuid("8871ac83-89c8-44e9-913f-a9a2a322440a")]
-interface IXySubFilterGraphMutex : public IUnknown
+interface __declspec(uuid("8871ac83-89c8-44e9-913f-a9a2a322440a")) IXySubFilterGraphMutex : public IUnknown
 {
 
 };
 
-[uuid("2dfcb782-ec20-4a7c-b530-4577adb33f21")]
-class XySubFilter
+class __declspec(uuid("2dfcb782-ec20-4a7c-b530-4577adb33f21")) XySubFilter
     : public CBaseFilter
     , public CDVS4XySubFilter
     , public ISpecifyPropertyPages

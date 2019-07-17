@@ -15,8 +15,7 @@ private:
     XySubFilterAutoLoader *m_filter;
 };
 
-[uuid("6b237877-902b-4c6c-92f6-e63169a5166c")]
-class XySubFilterAutoLoader : public CBaseFilter
+class __declspec(uuid("6b237877-902b-4c6c-92f6-e63169a5166c")) XySubFilterAutoLoader : public CBaseFilter
 {
 public:
     XySubFilterAutoLoader(LPUNKNOWN punk, HRESULT* phr, const GUID& clsid = __uuidof(XySubFilterAutoLoader));

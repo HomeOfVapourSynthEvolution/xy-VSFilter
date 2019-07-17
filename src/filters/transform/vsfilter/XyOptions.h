@@ -1,7 +1,6 @@
 #pragma once
 
-[uuid("85E5D6F9-BEFB-4E01-B047-758359CDF9AB")]
-interface IXyOptions : public IUnknown 
+interface __declspec(uuid("85E5D6F9-BEFB-4E01-B047-758359CDF9AB")) IXyOptions : public IUnknown
 {
     STDMETHOD(XyGetBool     )(unsigned field, bool      *value) = 0;
     STDMETHOD(XyGetInt      )(unsigned field, int       *value) = 0;

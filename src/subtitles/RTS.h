@@ -419,8 +419,7 @@ public:
     CRect AllocRect(CSubtitle* s, int segment, int entry, int layer, int collisions);
 };
 
-[uuid("537DCACA-2812-4a4f-B2C6-1A34C17ADEB0")]
-class CRenderedTextSubtitle : public CSubPicProviderImpl, public ISubStream, public ISubPicProviderEx2, public CSimpleTextSubtitle
+class __declspec(uuid("537DCACA-2812-4a4f-B2C6-1A34C17ADEB0")) CRenderedTextSubtitle : public CSubPicProviderImpl, public ISubStream, public ISubPicProviderEx2, public CSimpleTextSubtitle
 {
 
     static CAtlArray<AssCmdPosLevel> m_cmd_pos_level;

@@ -17,8 +17,7 @@ struct XyPlannerFormatExtra
     LPCVOID plans[4];
 };
 
-[uuid("4237bf3b-14fd-44a4-9704-86ec87f89897")]
-interface IXySubRenderFrame : public ISubRenderFrame
+interface __declspec(uuid("4237bf3b-14fd-44a4-9704-86ec87f89897")) IXySubRenderFrame : public ISubRenderFrame
 {
     STDMETHOD(GetXyColorSpace)(int *xyColorSpace) = 0;
 
@@ -26,8 +25,7 @@ interface IXySubRenderFrame : public ISubRenderFrame
     STDMETHOD(GetBitmapExtra)(int index, LPVOID extra_info) = 0;
 };
 
-[uuid("68f052bf-dcf2-476e-baab-494b6288c58e")]
-interface IXySubRenderProvider: public IUnknown
+interface __declspec(uuid("68f052bf-dcf2-476e-baab-494b6288c58e")) IXySubRenderProvider: public IUnknown
 {
     STDMETHOD(Connect)(IXyOptions *consumer) = 0;
     STDMETHOD(RequestFrame)(IXySubRenderFrame**subRenderFrame, REFERENCE_TIME now) = 0;

@@ -61,8 +61,7 @@ protected:
 	void BindControl(UINT id, CWnd& control);
 };
 
-[uuid("60765CF5-01C2-4ee7-A44B-C791CF25FEA0")]
-class CDVSMainPPage : public CDVSBasePPage
+class __declspec(uuid("60765CF5-01C2-4ee7-A44B-C791CF25FEA0")) CDVSMainPPage : public CDVSBasePPage
 {
 	void FreeLangs(), AllocLangs(int nLangs);
 
@@ -94,8 +93,7 @@ public:
 	virtual ~CDVSMainPPage();
 };
 
-[uuid("0180E49C-13BF-46db-9AFD-9F52292E1C22")]
-class CDVSGeneralPPage : public CDVSBasePPage
+class __declspec(uuid("0180E49C-13BF-46db-9AFD-9F52292E1C22")) CDVSGeneralPPage : public CDVSBasePPage
 {
 	int m_HorExt, m_VerExt, m_ResX2, m_ResX2minw, m_ResX2minh;
 	int m_LoadLevel;
@@ -117,8 +115,7 @@ public:
     CDVSGeneralPPage(LPUNKNOWN lpunk, HRESULT* phr, TCHAR *pName = NAME("DirectVobSub Property Page (general settings)"));
 };
 
-[uuid("A8B25C0E-0894-4531-B668-AB1599FAF7F6")]
-class CDVSMiscPPage : public CDVSBasePPage
+class __declspec(uuid("A8B25C0E-0894-4531-B668-AB1599FAF7F6")) CDVSMiscPPage : public CDVSBasePPage
 {
 	bool m_fFlipPicture, m_fFlipSubtitles, m_fHideSubtitles, m_fOSD, m_fDoPreBuffering, m_fReloaderDisabled, m_fSaveFullPath;
 
@@ -136,8 +133,7 @@ public:
     CDVSMiscPPage(LPUNKNOWN lpunk, HRESULT* phr, TCHAR *pName = NAME("DirectVobSub Property Page (misc settings)"));
 };
 
-[uuid("ACE4747B-35BD-4e97-9DD7-1D4245B0695C")]
-class CDVSTimingPPage : public CDVSBasePPage
+class __declspec(uuid("ACE4747B-35BD-4e97-9DD7-1D4245B0695C")) CDVSTimingPPage : public CDVSBasePPage
 {
 	int m_SubtitleSpeedMul, m_SubtitleSpeedDiv, m_SubtitleDelay;
 	bool m_fMediaFPSEnabled;
@@ -153,8 +149,7 @@ public:
     CDVSTimingPPage(LPUNKNOWN lpunk, HRESULT* phr, TCHAR *pName = NAME("DirectVobSub Timing Property Page"));
 };
 
-[uuid("69CE757B-E8C0-4B0A-9EA0-CEA284096F98")]
-class CDVSMorePPage : public CDVSBasePPage
+class __declspec(uuid("69CE757B-E8C0-4B0A-9EA0-CEA284096F98")) CDVSMorePPage : public CDVSBasePPage
 {
     int m_overlay_cache_max_item_num, m_overlay_no_blur_cache_max_item_num, m_path_cache_max_item_num, 
         m_scan_line_data_cache_max_item_num, m_subpixel_pos_level;
@@ -174,8 +169,7 @@ public:
     CDVSMorePPage(LPUNKNOWN lpunk, HRESULT* phr);
 };
 
-[uuid("F544E0F5-CA3C-47ea-A64D-35FCF1602396")]
-class CDVSAboutPPage : public CDVSBasePPage
+class __declspec(uuid("F544E0F5-CA3C-47ea-A64D-35FCF1602396")) CDVSAboutPPage : public CDVSBasePPage
 {
 public:
     CDVSAboutPPage(LPUNKNOWN lpunk, HRESULT* phr, TCHAR* pName=NAME("About Property Page"));
@@ -183,8 +177,7 @@ public:
     bool OnMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
 };
 
-[uuid("525F116F-04AD-40a2-AE2F-A0C4E1AFEF98")]
-class CDVSZoomPPage : public CDVSBasePPage
+class __declspec(uuid("525F116F-04AD-40a2-AE2F-A0C4E1AFEF98")) CDVSZoomPPage : public CDVSBasePPage
 {
 	NORMALIZEDRECT m_rect;
 
@@ -199,8 +192,7 @@ public:
     CDVSZoomPPage(LPUNKNOWN lpunk, HRESULT* phr);
 };
 
-[uuid("C2D6D98F-09CA-4524-AF64-1049B5665C9C")]
-class CDVSColorPPage : public CDVSBasePPage
+class __declspec(uuid("C2D6D98F-09CA-4524-AF64-1049B5665C9C")) CDVSColorPPage : public CDVSBasePPage
 {
     CListCtrl m_outputFmtList, m_inputFmtList;
     CButton m_followUpstreamPreferredOrder, m_btnColorUp, m_btnColorDown;
@@ -225,8 +217,7 @@ public:
     ~CDVSColorPPage();
 };
 
-[uuid("CE77C59C-CFD2-429f-868C-8B04D23F94CA")]
-class CDVSPathsPPage : public CDVSBasePPage
+class __declspec(uuid("CE77C59C-CFD2-429f-868C-8B04D23F94CA")) CDVSPathsPPage : public CDVSBasePPage
 {
 	CStringArray m_paths;
 
@@ -246,8 +237,7 @@ public:
 //
 // XySubFilter
 //
-[uuid("4514EFD4-E09B-4995-9668-143F12994FE7")]
-class CXySubFilterMainPPage : public CDVSBasePPage
+class __declspec(uuid("4514EFD4-E09B-4995-9668-143F12994FE7")) CXySubFilterMainPPage : public CDVSBasePPage
 {
     void FreeLangs(), AllocLangs(int nLangs);
 
@@ -282,8 +272,7 @@ public:
     virtual ~CXySubFilterMainPPage();
 };
 
-[uuid("E7946C91-1083-4F0E-AC45-5CF6BE7DB4C7")]
-class CXySubFilterMorePPage : public CDVSBasePPage
+class __declspec(uuid("E7946C91-1083-4F0E-AC45-5CF6BE7DB4C7")) CXySubFilterMorePPage : public CDVSBasePPage
 {
     int m_overlay_cache_max_item_num, m_overlay_no_blur_cache_max_item_num, m_path_cache_max_item_num, 
         m_scan_line_data_cache_max_item_num, m_subpixel_pos_level;
@@ -315,8 +304,7 @@ public:
     CXySubFilterMorePPage(LPUNKNOWN lpunk, HRESULT* phr);
 };
 
-[uuid("1438A8B4-E8AF-4A81-BCA8-970751A9EE82")]
-class CXySubFilterTimingPPage : public CDVSTimingPPage
+class __declspec(uuid("1438A8B4-E8AF-4A81-BCA8-970751A9EE82")) CXySubFilterTimingPPage : public CDVSTimingPPage
 {
 public:
     CXySubFilterTimingPPage(LPUNKNOWN lpunk, HRESULT* phr
@@ -324,8 +312,7 @@ public:
         : CDVSTimingPPage(lpunk, phr, pName) {}
 };
 
-[uuid("26DD9A01-7F95-40DE-B53D-4B4CE4023280")]
-class CXySubFilterPathsPPage : public CDVSPathsPPage
+class __declspec(uuid("26DD9A01-7F95-40DE-B53D-4B4CE4023280")) CXySubFilterPathsPPage : public CDVSPathsPPage
 {
 public:
     CXySubFilterPathsPPage(LPUNKNOWN lpunk, HRESULT* phr
@@ -333,8 +320,7 @@ public:
         : CDVSPathsPPage(lpunk, phr, pName) {}
 };
 
-[uuid("D0DE7ADC-7DC6-43EC-912D-ABD44D7453FB")]
-class CXySubFilterAboutPPage : public CDVSAboutPPage
+class __declspec(uuid("D0DE7ADC-7DC6-43EC-912D-ABD44D7453FB")) CXySubFilterAboutPPage : public CDVSAboutPPage
 {
 public:
     CXySubFilterAboutPPage(LPUNKNOWN lpunk, HRESULT* phr, TCHAR* pName=NAME("XySubFilter Property Page (about)"))
@@ -344,8 +330,7 @@ public:
 //
 // XySubFilterConsumer
 //
-[uuid("b7f66b77-10b9-48e4-be40-2e6e4d00292e")]
-class CXySubFilterConsumerGeneralPPage : public CDVSGeneralPPage
+class __declspec(uuid("b7f66b77-10b9-48e4-be40-2e6e4d00292e")) CXySubFilterConsumerGeneralPPage : public CDVSGeneralPPage
 {
 public:
     CXySubFilterConsumerGeneralPPage(LPUNKNOWN lpunk, HRESULT* phr
@@ -353,8 +338,7 @@ public:
         : CDVSGeneralPPage(lpunk, phr, pName) {}
 };
 
-[uuid("f2609280-2d03-4251-a1e4-65b1aff9dafe")]
-class CXySubFilterConsumerMiscPPage : public CDVSMiscPPage
+class __declspec(uuid("f2609280-2d03-4251-a1e4-65b1aff9dafe")) CXySubFilterConsumerMiscPPage : public CDVSMiscPPage
 {
 public:
     CXySubFilterConsumerMiscPPage(LPUNKNOWN lpunk, HRESULT* phr
@@ -362,16 +346,14 @@ public:
         : CDVSMiscPPage(lpunk, phr, pName) {}
 };
 
-[uuid("2e714223-34bc-430d-b52a-5bd23ddbf049")]
-class CXySubFilterConsumerAboutPPage : public CDVSAboutPPage
+class __declspec(uuid("2e714223-34bc-430d-b52a-5bd23ddbf049")) CXySubFilterConsumerAboutPPage : public CDVSAboutPPage
 {
 public:
     CXySubFilterConsumerAboutPPage(LPUNKNOWN lpunk, HRESULT* phr, TCHAR* pName=NAME("XySubFilterConsumer Property Page (about)"))
         : CDVSAboutPPage(lpunk, phr, pName) {}
 };
 
-[uuid("c371c901-97eb-4bb4-b742-d53a0eaa7b3c")]
-class CXySubFilterConsumerColorPPage : public CDVSColorPPage
+class __declspec(uuid("c371c901-97eb-4bb4-b742-d53a0eaa7b3c")) CXySubFilterConsumerColorPPage : public CDVSColorPPage
 {
 public:
     CXySubFilterConsumerColorPPage(LPUNKNOWN lpunk, HRESULT* phr, TCHAR* pName=NAME("XySubFilterConsumer Property Page (color)"))
